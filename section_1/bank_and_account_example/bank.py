@@ -107,4 +107,4 @@ class Bank():
         print('Closed because of inflation')
         print('Address: 11 Igal Alon Street, Tel Aviv, Israel')
         print('Phone:  (972) 672-1585')
-        print('We currently have', len(self.accounts_dict), 'account(s) open. And we are very rich!')
+        print('We currently have', len(self.accounts_dict), 'account(s) open.')
