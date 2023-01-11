@@ -31,31 +31,33 @@ while True:
     action = action[0]  # grab the first letter
     print()
 
-    if action == 'b':
-        swissBank.balance()
+    try:
+        if action == 'b':
+            swissBank.balance()
 
-    elif action == 'c':
-        swissBank.close_account()
+        elif action == 'c':
+            swissBank.close_account()
 
-    elif action == 'd':
-        swissBank.deposit()
+        elif action == 'd':
+            swissBank.deposit()
 
-    elif action == 'i':
-        swissBank.bank_info()
+        elif action == 'i':
+            swissBank.bank_info()
 
-    elif action == 'o':
-        swissBank.open_account()
+        elif action == 'o':
+            swissBank.open_account()
 
-    elif action == 's':
-        swissBank.show()
+        elif action == 's':
+            swissBank.show()
 
-    elif action == 'q':
-        break
+        elif action == 'q':
+            break
 
-    elif action == 'w':
-        swissBank.withdraw()
+        elif action == 'w':
+            swissBank.withdraw()
 
-    else:
-        print('Sorry, that was not a valid action.  Please try again.')
+    except AbortTransaction as error:
+        # Print out the text of the error message
+        print(error)
 
 print('Done')
