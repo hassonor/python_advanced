@@ -21,7 +21,7 @@ class Bank():
     def get_users_account(self):
         account_number = self.ask_for_valid_account_number()
         account = self.accounts_dict[account_number]
-        self.askForValidPassword(account)
+        self.ask_for_valid_password(account)
         return account
 
     def ask_for_valid_password(self, account):
