@@ -8,6 +8,26 @@ class Bank():
         self.accounts_dict = {}
         self.new_account_number = 0
 
+    def ask_for_valid_account_number(self):
+        account_number = input('What is your account number? ')
+        try:
+            account_number = int(account_number)
+        except ValueError:
+            raise AbortTransaction('The account number must be an integer')
+        if account_number not in self.accounts_dict:
+            raise AbortTransaction('There is no account ' + str(account_number))
+        return account_number
+
+    def get_users_account(self):
+        account_number = self.ask_for_valid_account_number()
+        account = self.accounts_dict[account_number]
+        self.askForValidPassword(account)
+        return account
+
+    def ask_for_valid_password(self, account):
+        password = input('Please enter your password: ')
+        account.check_password_match(password)
+
     def create_account(self, name, starting_amount, password):
         account = Account(name, starting_amount, password)
         new_account_number = self.new_account_number
