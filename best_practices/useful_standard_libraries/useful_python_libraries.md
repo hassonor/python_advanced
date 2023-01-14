@@ -9,7 +9,7 @@ ___
 * `bisect` provides bisection algorithms for sorting lists
 * `calendar` provided a number of date-related functions.
 * `codecs` provides function for encoding and decoding data.
-* `cllections` provides a variety of useful data structures.
+* `collections` provides a variety of useful data structures.
 * `copy` provides functions for copying data.
 * `csv` provides function for reading and writing CSV files.
 * `datetime` provides classes for handling dates and times.
