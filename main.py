@@ -1,16 +1,51 @@
-# This is a sample Python script.
+import examples.ecommerce_oo_example.products
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Absolute.
 
+product_1 = examples.ecommerce_oo_example.products.Product("fore")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# or
 
+from examples.ecommerce_oo_example.products import Product
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+product_2 = Product("main")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# or
+
+from examples.ecommerce_oo_example import products
+
+product_3 = products.Product("mizzen")
+
+test_1 = """
+>>> import ecommerce.products
+>>> product_1 = ecommerce.products.Product("fore")
+>>> product_1.name
+'fore'
+"""
+
+test_2 = """
+>>> from ecommerce.products import Product
+>>> product_2 = Product("main")
+>>> product_2.name
+'main'
+"""
+
+test_3 = """
+>>> from ecommerce import products
+>>> product_3 = products.Product("mizzen")
+>>> product_3.name
+'mizzen'
+"""
+
+disabled_test_path = """
+Change the name to test_path for a test that (a) fails
+and (b) exposes the `PYTHONPATH` setting in force for the
+test.
+
+>>> import sys
+>>> sys.path
+[]
+
+"""
+
+__test__ = {name: case for name, case in globals().items() if name.startswith("test_")}
